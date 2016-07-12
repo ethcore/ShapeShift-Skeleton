@@ -7,8 +7,8 @@ var serve = serveStatic(__dirname, {'index': ['index.html', 'index.htm']})
 
 // Create server
 var server = http.createServer(function(req, res){
-    var done = finalhandler(req, res)
-    serve(req, res, done)
+  var done = finalhandler(req, res)
+  serve(req, res, done)
 })
 
 // Listen
