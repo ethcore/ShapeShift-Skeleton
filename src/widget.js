@@ -1,3 +1,10 @@
+import angular from "angular"
+import "angular-ui-router"
+import "angular-bootstrap"
+import "angular-qrcode"
+import "ng-bootstrap-dropdown"
+import ShapeShift from "./shapeshift-api.js"
+
 var app = angular.module('ss-widget', ['ui.router', 'ui.bootstrap', 'monospaced.qrcode']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
@@ -6,7 +13,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url:  "/",
       views: {
         'shapeshift-widget': {
-          templateUrl: 'template/widget.html',
+          templateUrl: 'widget.html',
           controller: 'WidgetCtrl'
         }
       }
@@ -28,7 +35,7 @@ app.directive('coinError', ['ShapeShiftApiService', function(ShapeShiftApiServic
     link: function(scope, element, attrs, controllers) {
 
     },
-    templateUrl: 'template/coin-error.html'
+    templateUrl: 'coin-error.html'
   }
 }]);
 
@@ -44,7 +51,7 @@ app.directive('coinShiftButton', ['ShapeShiftApiService', function(ShapeShiftApi
     link: function(scope, element, attrs, controllers) {
       console.log(scope.ShiftState)
     },
-    templateUrl: 'template/coin-shift-button.html'
+    templateUrl: 'coin-shift-button.html'
   }
 }]);
 
@@ -60,7 +67,7 @@ app.directive('coinDepositInfo', ['ShapeShiftApiService', function(ShapeShiftApi
     link: function(scope, element, attrs, controllers) {
 
     },
-    templateUrl: 'template/coin-deposit-info.html'
+    templateUrl: 'coin-deposit-info.html'
   }
 }]);
 
@@ -96,7 +103,7 @@ app.directive('coinSelector', ['ShapeShiftApiService', function(ShapeShiftApiSer
       });
 
     },
-    templateUrl: 'template/coin-selector.html'
+    templateUrl: 'coin-selector.html'
   }
 }]);
 
@@ -212,7 +219,7 @@ app.directive('coinTrader', ['$interval', 'ShapeShiftApiService', function($inte
         });
       }
     },
-    templateUrl: 'template/coin-trader.html'
+    templateUrl: 'coin-trader.html'
   }
 }]);
 
