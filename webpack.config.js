@@ -12,7 +12,7 @@ module.exports = {
     filename: "bundle.js"
   },
   resolve:{
-    extensions: ["", ".js"]
+    extensions: ["", ".js", ".elm"]
   },
   resolveLoader: { root: path.join(__dirname, 'node_modules') },
   devServer: {
@@ -24,6 +24,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$|.jsx$/, exclude: /node_modules/, loader:  'babel' },
+      { test:    /\.elm$/, exclude: [/elm-stuff/, /node_modules/], loader:  'elm-webpack' },
       { test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/, loader : 'file-loader' },
       { test: /\.css$/, loader: "style-loader!css-loader" },
       { test: /\.less$/, loader: "style!css!less" },
